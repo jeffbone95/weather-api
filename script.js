@@ -27,5 +27,13 @@ function getWeather(){
         
     }) 
     
-}
+} 
 searchButton.addEventListener("click", getWeather) 
+getWeather() 
+$(".saveBtn").on("click", function(){ 
+    var currentTemperature=$(this).parent().attr("id"); 
+    var cityName=$(this).siblings("cityName").val(); 
+localStorage.setItem(currentTemperature, cityName); 
+
+
+}) 
