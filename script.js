@@ -24,16 +24,24 @@ function getWeather(){
         currentTemperature.textContent=data.data[0].temp 
         windSpeed.textContent=data.data[0].wind_spd 
         relativeHumidity.textContent=data.data[0].rh
-        
     }) 
     
-} 
+}  
+function weatherCard(data,name) { 
+    var temp = data.currentTemperature; 
+    var humidity = data.relativeHumidity; 
+    var wind = data.windSpeed; 
+    var currentDay= new Date(); 
+
+   
+
+
+
+}
 searchButton.addEventListener("click", getWeather) 
-getWeather() 
-$(".saveBtn").on("click", function(){ 
-    var currentTemperature=$(this).parent().attr("id"); 
-    var cityName=$(this).siblings("cityName").val(); 
-localStorage.setItem(currentTemperature, cityName); 
-
-
-}) 
+searchButton.addEventListener.on('click', function () { 
+    var key=$(this).parent().attr('id'); 
+    var value=$(this).sibling().attr('button').val(); 
+    localStorage.setItem(key,value); 
+})
+   
